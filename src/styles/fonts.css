@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Telegrama-render';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Telegrama-render'), url('../fonts/telegrama_render.otf') format('opentype');
+}
