@@ -6,8 +6,8 @@ export interface Credentials {
 }
 export const onLogin = async (data: Credentials) => {
     const requestConfig: AxiosRequestConfig = {
-        method: 'post',
-        url: 'https://my-json-server.typicode.com/RuiFonseca/SquadApp',
+        method: 'get',
+        url: 'https://my-json-server.typicode.com/RuiFonsecaEae/SquadApp/users',
         data,
     };
     try {

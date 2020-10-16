@@ -5,11 +5,12 @@ import './styles/fonts.css';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
 import Login from './components/Auth/Login';
-
+import { Provider } from 'react-redux';
+import store from './Store';
 ReactDOM.render(
-    <React.StrictMode>
+    <Provider store={store}>
         <Login />
-    </React.StrictMode>,
+    </Provider>,
     document.getElementById('root'),
 );
 

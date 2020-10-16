@@ -1,74 +1,37 @@
 import React, { FC, useState } from 'react';
 import './Login.scss';
-import { onLogin } from './Auth.api';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootStore } from '../../Store';
+import { GetPokemon } from '../../actions/pokemonActions';
 
-// interface Credentials {
-//     username?: string;
-//     password?: string;
-// }
-
-interface UserCredentials {
-    username: string;
-    password: string;
-}
 const Login: FC = () => {
-    const [{ username, password }, setState] = useState<UserCredentials>({ username: '', password: '' });
+    const dispatch = useDispatch();
+    const [pokemonName, setPokemonName] = useState('');
+    const pokemonState = useSelector((state: RootStore) => state.pokemon);
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setPokemonName(event.target.value);
+    const handleSubmit = () => dispatch(GetPokemon(pokemonName));
 
-    const setCredentialsHandler = (_type: string, _value: string): void => {
-        console.log(_value);
-        if (_type !== 'password') {
-            setState({
-                username: _value,
-                password,
-            });
-        } else {
-            setState({
-                username,
-                password: _value,
-            });
-        }
-    };
-    const [error, setError] = useState('');
-    const loginHandler = async (event: React.FormEvent) => {
-        event.preventDefault();
-        console.log('login');
-        const response = await onLogin({
-            username,
-            password,
-        });
-        if (response && response.error) {
-            setError(response.error);
-        }
-    };
+    console.log(pokemonState);
     return (
         <div className="login">
-            <form onSubmit={loginHandler}>
-                <h3>Login</h3>
+            <div>
+                <h3>Search</h3>
                 <div className="form-group">
-                    <label htmlFor="user-name">User Name</label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(event: React.ChangeEvent<HTMLInputElement>): void =>
-                            setCredentialsHandler(event.target.type, event.target.value)
-                        }
-                    />
+                    <label>Pokemon Name</label>
+                    <input type="text" onChange={handleChange} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(event: React.ChangeEvent<HTMLInputElement>): void =>
-                            setCredentialsHandler(event.target.type, event.target.value)
-                        }
-                    />
+                    <button onClick={handleSubmit}>Search </button>
                 </div>
-                <div className="form-group">
-                    <button type="submit">Login </button>
+            </div>
+            {pokemonState.pokemon && (
+                <div>
+                    <img src={pokemonState.pokemon.sprites.front_default} alt="" />
+                    {pokemonState.pokemon.abilities.map((ability, idx) => {
+                        return <span key={idx}>{ability.ability.name}</span>;
+                    })}
                 </div>
-                {error.length > 0 && <p>{error}</p>}
-            </form>
+            )}
         </div>
     );
 };
