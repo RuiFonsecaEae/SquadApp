@@ -1,4 +1,4 @@
-.login {
+.pokemon-search-holder {
   position: absolute;
   top: 35%;
   left: 50%;
@@ -12,7 +12,7 @@
   > div {
     display: flex;
     flex-direction: column;
-    .form-group {
+    .group {
       margin-bottom: 10px;
       display: flex;
       flex-direction: column;

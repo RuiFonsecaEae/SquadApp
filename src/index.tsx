@@ -4,12 +4,12 @@ import './styles/normalize.css';
 import './styles/fonts.css';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
-import Login from './components/Auth/Login';
+import PokemonSearch from './components/pokemon_search/PokemonSearch';
 import { Provider } from 'react-redux';
 import store from './Store';
 ReactDOM.render(
     <Provider store={store}>
-        <Login />
+        <PokemonSearch />
     </Provider>,
     document.getElementById('root'),
 );
