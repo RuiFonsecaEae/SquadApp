@@ -4,7 +4,7 @@ import './App.scss';
 import { Navigation } from './components/navigation/Navigation';
 import { Home } from './components/pages/Home';
 import About from './components/pages/About';
-import { Gallery } from './components/pages/Gallery';
+import { Playground } from './components/pages/Playground';
 
 export const App: React.FC = () => {
     return (
@@ -12,17 +12,17 @@ export const App: React.FC = () => {
             <Router>
                 <div>
                     <Navigation></Navigation>
-                    <Switch>
-                        <Route path="/about">
-                            <About />
-                        </Route>
-                        <Route path="/gallery">
-                            <Gallery />
-                        </Route>
-                        <Route path="/">
-                            <Home />
-                        </Route>
-                    </Switch>
+                    {/*<Switch>*/}
+                    {/*    <Route path="/about">*/}
+                    {/*        <About />*/}
+                    {/*    </Route>*/}
+                    {/*    <Route path="/playground">*/}
+                    {/*        <Playground />*/}
+                    {/*    </Route>*/}
+                    {/*    <Route path="/">*/}
+                    {/*        <Home />*/}
+                    {/*    </Route>*/}
+                    {/*</Switch>*/}
                 </div>
             </Router>
         </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { PageContainer } from '../containers/PageContainer';
 
-export const Gallery: React.FC = () => {
+export const Playground: React.FC = () => {
     return (
         <div>
-            <PageContainer title="Gallery"></PageContainer>
+            <PageContainer title="Playground"></PageContainer>
         </div>
     );
 };

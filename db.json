@@ -1,4 +1,21 @@
 {
+  "routes": [
+    {
+      "name": "about",
+      "private": false,
+      "slug": "about"
+    },
+    {
+      "name": "playground",
+      "private": false,
+      "slug": "playground"
+    },
+    {
+      "name": "private",
+      "private": true,
+      "slug": "private"
+    }
+  ],
   "users": [
     {
       "id": 1,
