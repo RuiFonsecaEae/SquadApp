@@ -1,16 +1,20 @@
 import React from 'react';
 import './PageContainer.scss';
 
-interface Info {
+interface Page {
     title: string;
-    content?: string;
+    subTitle?: string;
+    imgUrl?: string;
+    posts?: [];
+    private?: boolean;
+    slug?: string;
 }
 
-export const PageContainer: React.FC<Info> = ({ title, content }) => {
+export const PageContainer: React.FC<Page> = ({ title, subTitle }) => {
     return (
         <div>
             <h1>{title}</h1>
-            {content ? <p className="page-container">{content}</p> : ''}
+            <h4>{subTitle}</h4>
         </div>
     );
 };

@@ -16,7 +16,7 @@
   "pages": [
     {
       "title": "About",
-      "sub-title": "",
+      "subTitle": "",
       "imgUrl": "",
       "posts": [
         {
@@ -29,7 +29,7 @@
     },
     {
       "title": "Playground",
-      "sub-title": "",
+      "subTitle": "",
       "imgUrl": "",
       "posts": [
         {
@@ -50,7 +50,7 @@
     },
     {
       "title": "Private",
-      "sub-title": "This is a private area",
+      "subTitle": "This is a private area",
       "imgUrl": "",
       "private": true,
       "slug": "private"
