@@ -18,10 +18,12 @@ const Routes: React.FC<Props> = ({ pages }) => {
         <Switch>
             {pages?.map((page, index) => (
                 <Route exact path={`/` + page.slug} key={index}>
-                    <Link to="/" className="back-home-button">
-                        Back Home
-                    </Link>
-                    <PageContainer title={page.title} subTitle={page.subTitle} />
+                    {page.slug != '' && (
+                        <Link to="/" className="back-home-button">
+                            Back Home
+                        </Link>
+                    )}
+                    <PageContainer title={page.title} subTitle={page.subTitle} imgUrl={page.imgUrl} />
                 </Route>
             ))}
         </Switch>
