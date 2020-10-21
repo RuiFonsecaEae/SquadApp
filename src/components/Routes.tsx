@@ -3,7 +3,6 @@ import { Pages } from '../actions/pagesActionsTypes';
 import { connect, MapStateToPropsParam } from 'react-redux';
 import { RootState } from '../reducers/RootReducer';
 import { Link, Route, Switch } from 'react-router-dom';
-import Home from './pages/Home';
 import { PageContainer } from './containers/PageContainer';
 
 interface OwnProps {}
@@ -17,11 +16,8 @@ const Routes: React.FC<Props> = ({ pages }) => {
     console.log(pages);
     return (
         <Switch>
-            <Route exact path="/">
-                <Home />
-            </Route>
             {pages?.map((page, index) => (
-                <Route path={`/` + page.slug} key={index}>
+                <Route exact path={`/` + page.slug} key={index}>
                     <Link to="/" className="back-home-button">
                         Back Home
                     </Link>

@@ -10,11 +10,16 @@ interface Page {
     slug?: string;
 }
 
-export const PageContainer: React.FC<Page> = ({ title, subTitle }) => {
+export const PageContainer: React.FC<Page> = ({ title, subTitle, imgUrl }) => {
     return (
         <div>
             <h1>{title}</h1>
-            <h4>{subTitle}</h4>
+            {subTitle && <h4>{subTitle}</h4>}
+            {imgUrl && (
+                <div>
+                    <img src={imgUrl} alt="" />
+                </div>
+            )}
         </div>
     );
 };

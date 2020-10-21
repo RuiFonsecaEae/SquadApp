@@ -10,7 +10,6 @@ export type Pages = {
     private: boolean;
     slug: string;
 };
-
 export interface PagesLoading {
     type: typeof PAGES_GET;
 }
