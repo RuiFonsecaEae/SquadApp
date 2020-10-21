@@ -2,16 +2,56 @@
   "routes": [
     {
       "name": "about",
-      "private": false,
       "slug": "about"
     },
     {
       "name": "playground",
-      "private": false,
       "slug": "playground"
     },
     {
       "name": "private",
+      "slug": "private"
+    }
+  ],
+  "pages": [
+    {
+      "title": "About",
+      "sub-title": "",
+      "imgUrl": "",
+      "posts": [
+        {
+          "title": "",
+          "description": ""
+        }
+      ],
+      "private": false,
+      "slug": "about"
+    },
+    {
+      "title": "Playground",
+      "sub-title": "",
+      "imgUrl": "",
+      "posts": [
+        {
+          "title": "post 1",
+          "description": "description 1"
+        },
+        {
+          "title": "post 2",
+          "description": "description 2"
+        },
+        {
+          "title": "post 3",
+          "description": "description 3"
+        }
+      ],
+      "private": false,
+      "slug": "playground"
+    },
+    {
+      "title": "Private",
+      "sub-title": "This is a private area",
+      "imgUrl": "",
       "private": true,
       "slug": "private"
     }
