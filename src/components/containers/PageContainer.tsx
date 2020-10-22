@@ -1,5 +1,6 @@
 import React from 'react';
 import './PageContainer.scss';
+import PokemonSearch from '../pokemon_search/PokemonSearch';
 
 interface Page {
     title: string;
@@ -10,7 +11,7 @@ interface Page {
     slug?: string;
 }
 
-export const PageContainer: React.FC<Page> = ({ title, subTitle, imgUrl }) => {
+export const PageContainer: React.FC<Page> = ({ title, subTitle, imgUrl, slug }) => {
     return (
         <div>
             <h1>{title}</h1>
@@ -20,6 +21,7 @@ export const PageContainer: React.FC<Page> = ({ title, subTitle, imgUrl }) => {
                     <img src={imgUrl} alt="" />
                 </div>
             )}
+            {slug === 'playground' && <PokemonSearch></PokemonSearch>}
         </div>
     );
 };

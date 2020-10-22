@@ -23,7 +23,7 @@ const Routes: React.FC<Props> = ({ pages }) => {
                             Back Home
                         </Link>
                     )}
-                    <PageContainer title={page.title} subTitle={page.subTitle} imgUrl={page.imgUrl} />
+                    <PageContainer title={page.title} subTitle={page.subTitle} imgUrl={page.imgUrl} slug={page.slug} />
                 </Route>
             ))}
         </Switch>

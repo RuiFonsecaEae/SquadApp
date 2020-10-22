@@ -13,26 +13,37 @@ const PokemonSearch: FC = () => {
 
     console.log(pokemonState);
     return (
-        <div className="pokemon-search-holder">
-            <div>
-                <h3>Search</h3>
-                <div className="group">
-                    <label>Pokemon Name</label>
-                    <input type="text" onChange={handleChange} />
+        <div className="pokemon-search">
+            <h3>Pokemons</h3>
+            <div className="pokemon-search-holder">
+                <div className="search-area">
+                    <h3>Search</h3>
+                    <div className="group">
+                        <label>Pokemon Name</label>
+                        <input type="text" onChange={handleChange} />
+                    </div>
+                    <div className="group">
+                        <button onClick={handleSubmit}>Search </button>
+                    </div>
                 </div>
-                <div className="group">
-                    <button onClick={handleSubmit}>Search </button>
-                </div>
+                {pokemonState.pokemon && (
+                    <div className="results">
+                        <img src={pokemonState.pokemon.sprites?.front_default} alt="" />
+                        {pokemonState.pokemon.abilities &&
+                            pokemonState.pokemon.abilities.map((ability, idx) => {
+                                return <span key={idx}>{ability.ability.name}</span>;
+                            })}
+                    </div>
+                )}
             </div>
-            {pokemonState.pokemon && (
-                <div>
-                    <img src={pokemonState.pokemon.sprites?.front_default} alt="" />
-                    {pokemonState.pokemon.abilities &&
-                        pokemonState.pokemon.abilities.map((ability, idx) => {
-                            return <span key={idx}>{ability.ability.name}</span>;
-                        })}
-                </div>
-            )}
+            <a
+                className="info-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://pokeapi.co/api/v2/pokemon?limit=100&offset=200"
+            >
+                List of Pokemon names.
+            </a>
         </div>
     );
 };
