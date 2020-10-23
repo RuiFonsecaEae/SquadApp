@@ -10,18 +10,18 @@ export const LoginButton: React.FC<LoginInterface> = ({ logged }) => {
 
     const loginHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
         console.log(event);
-        setLogin(true);
+        setLogin(!loginState);
     };
     return (
         <>
             {logged ? (
-                <button className="login-button" onClick={loginHandler}>
+                <button className={`login-button ${loginState ? 'active' : ''}`} onClick={loginHandler}>
                     Login
                 </button>
             ) : (
                 <button className="login-button">Logout</button>
             )}
-            {loginState && <Login />}
+            {loginState && <Login setLogin={setLogin} />}
         </>
     );
 };

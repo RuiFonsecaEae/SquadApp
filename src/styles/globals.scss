@@ -10,6 +10,9 @@
   position: absolute;
   top: 20px;
   right: 20px;
+  &.active {
+    text-decoration: line-through;
+  }
 }
 button {
   appearance: none;

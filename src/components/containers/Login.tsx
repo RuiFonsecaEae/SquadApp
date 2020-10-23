@@ -1,11 +1,23 @@
 import React from 'react';
 import './Login.scss';
 
-export const Login: React.FC = () => {
+interface Props {
+    setLogin: Function;
+}
+
+export const Login: React.FC<Props> = ({ setLogin }) => {
+    // const closeHandler = (event: React.MouseEvent) => {
+    //     console.log(event);
+    // }
+
+    // function handleChange(event) {
+    //     // Here, we invoke the callback with the new value
+    //     props.onChange(event.target.value);
+    // }
     return (
         <div className="login-container">
             <h3>Login</h3>
-            <button className="close-button">
+            <button className="close-button" onClick={() => setLogin()}>
                 close
             </button>
             <div>
