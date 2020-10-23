@@ -37,11 +37,18 @@
   }
   .results{
     display: flex;
+    h3{
+      margin-bottom: 0;
+    }
     img {
       align-self: center;
       outline: none;
       width: 100px;
       height: 100px;
+    }
+    span{
+      font-size: 12px;
+      text-align: left;
     }
   }
 }

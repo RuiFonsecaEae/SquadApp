@@ -28,7 +28,9 @@ const PokemonSearch: FC = () => {
                 </div>
                 {pokemonState.pokemon && (
                     <div className="results">
+                        <h4>{pokemonName}</h4>
                         <img src={pokemonState.pokemon.sprites?.front_default} alt="" />
+                        {pokemonState.pokemon.abilities && <h5>Abilities</h5>}
                         {pokemonState.pokemon.abilities &&
                             pokemonState.pokemon.abilities.map((ability, idx) => {
                                 return <span key={idx}>{ability.ability.name}</span>;

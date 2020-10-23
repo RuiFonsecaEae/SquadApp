@@ -3,7 +3,7 @@ import './PageContainer.scss';
 import PokemonSearch from '../pokemon_search/PokemonSearch';
 
 interface Page {
-    title: string;
+    title?: string;
     subTitle?: string;
     imgUrl?: string;
     posts?: [];
