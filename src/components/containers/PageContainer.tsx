@@ -7,11 +7,11 @@ interface Page {
     subTitle?: string;
     imgUrl?: string;
     posts?: [];
-    private?: boolean;
+    privateArea?: boolean;
     slug?: string;
 }
 
-export const PageContainer: React.FC<Page> = ({ title, subTitle, imgUrl, slug }) => {
+export const PageContainer: React.FC<Page> = ({ title, subTitle, imgUrl, slug, privateArea }) => {
     return (
         <div>
             <h1>{title}</h1>
@@ -21,7 +21,8 @@ export const PageContainer: React.FC<Page> = ({ title, subTitle, imgUrl, slug })
                     <img src={imgUrl} alt="" />
                 </div>
             )}
-            {slug === 'playground' && <PokemonSearch></PokemonSearch>}
+            {'private' === slug && <div>{privateArea} KKKKKK</div>}
+            {'playground' === slug && <PokemonSearch></PokemonSearch>}
         </div>
     );
 };
