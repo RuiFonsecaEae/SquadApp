@@ -7,7 +7,7 @@ export type Pages = {
     subTitle: string;
     imgUrl: string;
     posts: [];
-    private: boolean;
+    privateArea: boolean;
     slug: string;
 };
 export interface PagesLoading {

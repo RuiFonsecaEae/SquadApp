@@ -1,10 +1,4 @@
-import {
-    PAGES_FAIL,
-    PAGES_GET,
-    PAGES_SUCCESS,
-    PagesDispatchTypes,
-    Pages,
-} from '../actions/pagesActionsTypes';
+import { PAGES_FAIL, PAGES_GET, PAGES_SUCCESS, PagesDispatchTypes, Pages } from '../actions/pagesActionsTypes';
 
 export interface PagesState {
     loading: boolean;

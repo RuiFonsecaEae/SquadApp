@@ -21,7 +21,11 @@ export const PageContainer: React.FC<Page> = ({ title, subTitle, imgUrl, slug, p
                     <img src={imgUrl} alt="" />
                 </div>
             )}
-            {'private' === slug && <div>{privateArea} KKKKKK</div>}
+            {'private' === slug && (
+                <div>
+                    {privateArea} {slug} KKKKKK
+                </div>
+            )}
             {'playground' === slug && <PokemonSearch></PokemonSearch>}
         </div>
     );

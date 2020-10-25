@@ -17,7 +17,8 @@
     {
       "title": "Home",
       "imgUrl": "https://img2.pngio.com/justines-octopuspng-octopus-tattoo-design-octopus-drawing-octopus-art-png-750_490.png",
-      "slug": ""
+      "slug": "",
+      "privateArea": false
     },
     {
       "title": "About",
