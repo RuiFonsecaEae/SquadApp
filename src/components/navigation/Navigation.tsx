@@ -12,7 +12,7 @@ export interface ConnectedProps {
 export type Props = OwnProps & ConnectedProps;
 
 const Navigation: React.FC<Props> = ({ routes }) => {
-    console.log(routes);
+    console.log('Routes on Navigation', routes);
     return (
         <div className="nav-container">
             <nav>

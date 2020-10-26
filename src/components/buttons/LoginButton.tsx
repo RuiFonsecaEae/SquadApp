@@ -1,27 +1,21 @@
-import React, { useState } from 'react';
-import { Login } from '../containers/Login';
+import React from 'react';
 
-export interface LoginInterface {
+interface LoginInterface {
     logged: boolean;
+    setLoginFn: Function;
+    loginState: boolean;
 }
 
-export const LoginButton: React.FC<LoginInterface> = ({ logged }) => {
-    const [loginState, setLogin] = useState(false);
-
-    const loginHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
-        console.log(event);
-        setLogin(!loginState);
-    };
+export const LoginButton: React.FC<LoginInterface> = ({ logged, setLoginFn, loginState }) => {
     return (
         <>
             {logged ? (
-                <button className={`login-button ${loginState ? 'active' : ''}`} onClick={loginHandler}>
+                <button className={`login-button ${loginState ? 'active' : ''}`} onClick={() => setLoginFn()}>
                     Login
                 </button>
             ) : (
                 <button className="login-button">Logout</button>
             )}
-            {loginState && <Login setLogin={setLogin} />}
         </>
     );
 };

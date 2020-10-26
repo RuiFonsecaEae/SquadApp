@@ -11,7 +11,7 @@ const PokemonSearch: FC = () => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setPokemonName(event.target.value);
     const handleSubmit = () => dispatch(GetPokemon(pokemonName));
 
-    console.log(pokemonState);
+    console.log('pokemonState', pokemonState);
     return (
         <div className="pokemon-search">
             <h3>Pokemons</h3>

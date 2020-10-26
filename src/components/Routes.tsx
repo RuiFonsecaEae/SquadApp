@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Pages } from '../actions/pagesActionsTypes';
 import { connect, MapStateToPropsParam } from 'react-redux';
 import { RootState } from '../reducers/RootReducer';
@@ -9,6 +9,7 @@ import { UsersState } from '../reducers/UsersReducer';
 import { Logged } from '../actions/LoginActionsTypes';
 import { LoginState } from '../reducers/LoginReducer';
 import { LoginButton } from './buttons/LoginButton';
+import Login from './containers/Login';
 
 interface OwnProps {}
 
@@ -21,24 +22,30 @@ export type Props = OwnProps & ConnectedProps;
 
 export type States = RootState & UsersState & LoginState;
 
-const Routes: React.FC<Props> = ({ pages, users, logged }) => {
-    console.log(pages);
-    console.log(users);
+const Routes: React.FC<Props> = ({ pages, logged }) => {
     console.log('logged', logged);
+    const [loginState, setLogin] = useState(false);
+    const loginHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+        console.log('loginHandler', event);
+        setLogin(!loginState);
+    };
     return (
-        <Switch>
-            {pages?.map((page, index) => (
-                <Route exact path={`/` + page.slug} key={index}>
-                    {page.slug !== '' && (
-                        <Link to="/" className="back-home-button">
-                            Back Home
-                        </Link>
-                    )}
-                    <LoginButton logged />
-                    <PageContainer {...page} />
-                </Route>
-            ))}
-        </Switch>
+        <>
+            <Switch>
+                {pages?.map((page, index) => (
+                    <Route exact path={`/` + page.slug} key={index}>
+                        {page.slug !== '' && (
+                            <Link to="/" className="back-home-button">
+                                Back Home
+                            </Link>
+                        )}
+                        <LoginButton logged setLoginFn={loginHandler} loginState={loginState} />
+                        <PageContainer {...page} />
+                    </Route>
+                ))}
+            </Switch>
+            {loginState && <Login setLogin={setLogin} />}
+        </>
     );
 };
 

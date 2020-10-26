@@ -21,9 +21,9 @@ export const PageContainer: React.FC<Page> = ({ title, subTitle, imgUrl, slug, p
                     <img src={imgUrl} alt="" />
                 </div>
             )}
-            {'private' === slug && (
+            {privateArea === true && (
                 <div>
-                    {privateArea} {slug} KKKKKK
+                    <h5>You must be logged</h5>
                 </div>
             )}
             {'playground' === slug && <PokemonSearch></PokemonSearch>}

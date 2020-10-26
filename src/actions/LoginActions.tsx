@@ -8,6 +8,6 @@ export const GetLogin = () => async (dispatch: Dispatch<LoginDispatchTypes>): Pr
             logged: false,
         });
     } catch (e) {
-        console.log(e);
+        console.log('Login error', e);
     }
 };
